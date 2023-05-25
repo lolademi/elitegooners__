@@ -1,11 +1,15 @@
 # build_files.sh
-pip install -r requirements.txt
+
+#!/bin/bash
 
 # Install dependencies
 pip install -r requirements.txt
 
 # Build static assets
-python manage.py collectstatic --noinput
+python3.9 manage.py collectstatic --noinput
+
+# Run any necessary database migrations
+python3.9 manage.py migrate
 
 # Start the Django development server
-python manage.py runserver 0.0.0.0:$PORT
+python3.9 manage.py runserver 0.0.0.0:$PORT
