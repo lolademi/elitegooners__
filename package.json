@@ -1,0 +1,14 @@
+{
+  "name": "my-django-project",
+  "version": "1.0.0",
+  "description": "My Django project deployed on Vercel",
+  "scripts": {
+    "build": "python manage.py collectstatic --noinput",
+    "start": "python manage.py runserver 0.0.0.0:$PORT"
+  },
+  "dependencies": {
+    "django": "4.2.1",
+    "gunicorn": "^20.1.0",
+    "psycopg2-binary": "^2.9.1"
+  }
+}

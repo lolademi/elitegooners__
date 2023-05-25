@@ -1,0 +1,29 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<div
+  class="main flex justify-evenly flex-wrap container rounded-2xl border-red-700 border-4 p-4 m-2 m-auto mt-2"
+>
+  {% for data in dataset %}
+  <a class="" href="/{{data.id}}">
+    <div class="card">
+      <div class="content">
+        <div
+          class="border-2 border-red-500 rounded-2xl w-28 h-48 overflow-hidden"
+        >
+          <img src="{{data.img.url}}" class="" />
+        </div>
+        <div class="description">
+          <p class="title">
+            <strong>{{data.name}}</strong>
+          </p>
+          <p class="info">{{data.rank}} | {{data.country}}</p>
+          <p class="price">2.50</p>
+        </div>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+{% endblock %}
